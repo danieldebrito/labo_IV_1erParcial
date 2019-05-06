@@ -12,9 +12,8 @@ export class ProductosService {
   constructor(public miHttp: HttpRouteBaseService) { }
 
   public listar(): Promise<Array<any>> {
-    return this.miHttp.httpGetP('/producto/')
+    return this.miHttp.httpGetP('/productos/')
       .then(data => {
-        console.log( 'promise listar ======> ', data);
         return data;
       })
       .catch(err => {
@@ -22,4 +21,5 @@ export class ProductosService {
         return null;
       });
   }
+
 }

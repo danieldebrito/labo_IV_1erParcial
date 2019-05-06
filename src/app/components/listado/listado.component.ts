@@ -19,7 +19,7 @@ export class ListadoComponent implements OnInit {
    traerTodos() {
     this.miServicio.listar()
     .then(datos => {
-      console.log('listado de productos  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::', datos);
+      console.log('listado de productos:', datos);
       this.listado = datos;
     });
    }
@@ -27,7 +27,7 @@ export class ListadoComponent implements OnInit {
   ngOnInit() {
     this.miServicio.listar()
     .then(datos => {
-      console.log('listado de productos ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::,', datos);
+      console.log('listado de productos:', datos);
       this.listado = datos;
     });
   }

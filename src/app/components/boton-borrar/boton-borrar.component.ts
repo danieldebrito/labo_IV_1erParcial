@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Producto } from 'src/app/class/producto';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-boton-borrar',
@@ -7,7 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonBorrarComponent implements OnInit {
 
-  constructor() { }
+  @Input() productoBorrar: Producto;
+  @Output() cargalista = new EventEmitter();
+
+  constructor(private servProductos: ProductosService) { }
+
+  borrar(){
+    console.log(this.productoBorrar);
+    this.servProductos.Eliminar(this.productoBorrar.idProducto).then( () => {
+      this.cargalista.emit();
+      // this.cargarLista();
+      console.log('id a borrar:' + this.productoBorrar.idProducto);
+    });
+  }
+
+
+
+
 
   ngOnInit() {
   }

@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//form control para ngModel
+import { FormsModule } from '@angular/forms';
+
+
 // import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpRouteBaseService } from './services/http-route-base.service';
@@ -14,6 +18,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FootComponent } from './components/foot/foot.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { BotonBorrarComponent } from './components/boton-borrar/boton-borrar.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +28,13 @@ import { BotonBorrarComponent } from './components/boton-borrar/boton-borrar.com
     NavComponent,
     FootComponent,
     ListadoComponent,
-    BotonBorrarComponent
+    BotonBorrarComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule, // form control
     HttpClientModule,
   ],
   providers: [

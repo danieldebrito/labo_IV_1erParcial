@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../class/producto';
+import { Observable } from 'rxjs';
 import { HttpRouteBaseService } from '../services/http-route-base.service';
 
 @Injectable({
@@ -20,6 +21,18 @@ export class ProductosService {
         console.log( 'error de listar ===> ', err);
         return null;
       });
+  }
+
+  public Eliminar(id: string): Promise<object> {
+    return this.miHttp.httpDeleteP('/productos/' + id);
+  }
+
+  public TraerUno(id: string): Observable<Producto> {
+    return this.miHttp.httpGetO<Producto>('/productos/' + '"' + id + '"');
+  }
+
+  public TraerPorDescrip(descripcion: string): Observable<Producto> {
+    return this.miHttp.httpGetO<Producto>('/productos/descripcion/' + '"' + descripcion + '"');
   }
 
 }

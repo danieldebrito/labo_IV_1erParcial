@@ -9,15 +9,20 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class ListadoComponent implements OnInit {
 
-  public listado: Array<any>;
-  miServicio: ProductosService;
+  public listado: Producto[];
 
-  constructor( servicioPaises: ProductosService) {
-    this.miServicio = servicioPaises;
-   }
+  constructor( private ProductoService: ProductosService ) { }
 
    traerTodos() {
-    this.miServicio.listar()
+    this.ProductoService.listar()
+    .then(datos => {
+      console.log('listado de productos:', datos);
+      this.listado = datos;
+    });
+   }
+
+   public cargarLista() {
+    this.ProductoService.listar()
     .then(datos => {
       console.log('listado de productos:', datos);
       this.listado = datos;
@@ -25,11 +30,7 @@ export class ListadoComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.miServicio.listar()
-    .then(datos => {
-      console.log('listado de productos:', datos);
-      this.listado = datos;
-    });
+    this.cargarLista();
   }
 
 }

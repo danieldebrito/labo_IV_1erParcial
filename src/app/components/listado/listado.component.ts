@@ -29,6 +29,10 @@ export class ListadoComponent implements OnInit {
     });
    }
 
+   public mostarProd(event){
+      console.log(event.descripcion);
+   }
+
   ngOnInit() {
     this.cargarLista();
   }

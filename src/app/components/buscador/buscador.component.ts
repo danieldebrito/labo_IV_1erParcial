@@ -1,9 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Producto } from './../../class/producto';
 import { ProductosService } from '../../services/productos.service';
-import { EventEmitter } from 'events';
-
-
 
 @Component({
   selector: 'app-buscador',
@@ -35,10 +32,10 @@ public traerPordesc() {
   this.ProductoService.TraerPorDescrip(this.producto.descripcion).subscribe(response => {
     if(response.descripcion){
       this.producto = response;
-      // this.encontroArt.emit();
+      this.encontroArt.emit({prod: this.producto});
     }
 
-      console.log(response);
+    console.log(response);
   },
       error => {
           console.error(error);

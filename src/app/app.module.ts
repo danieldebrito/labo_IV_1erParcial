@@ -19,6 +19,8 @@ import { FootComponent } from './components/foot/foot.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { BotonBorrarComponent } from './components/boton-borrar/boton-borrar.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { AltaComponent } from './components/alta/alta.component';
+import { ProductosBoardComponent } from './components/productos-board/productos-board.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     FootComponent,
     ListadoComponent,
     BotonBorrarComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    AltaComponent,
+    ProductosBoardComponent
   ],
   imports: [
     BrowserModule,

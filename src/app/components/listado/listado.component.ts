@@ -1,6 +1,6 @@
-import { Producto } from './../../class/producto';
+import { Pelicula } from './../../class/pelicula';
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from '../../services/productos.service';
+import { PeliculasService } from '../../services/peliculas.service';
 
 @Component({
   selector: 'app-listado',
@@ -9,12 +9,12 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class ListadoComponent implements OnInit {
 
-  public listado: Producto[];
+  public listado: Pelicula[];
 
-  constructor( private ProductoService: ProductosService ) { }
+  constructor( private peliculasService: PeliculasService ) { }
 
    traerTodos() {
-    this.ProductoService.listar()
+    this.peliculasService.listar()
     .then(datos => {
       console.log('listado de productos:', datos);
       this.listado = datos;
@@ -22,7 +22,7 @@ export class ListadoComponent implements OnInit {
    }
 
    public cargarLista() {
-    this.ProductoService.listar()
+    this.peliculasService.listar()
     .then(datos => {
       console.log('listado de productos:', datos);
       this.listado = datos;

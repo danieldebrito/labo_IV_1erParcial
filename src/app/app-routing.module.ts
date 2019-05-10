@@ -8,16 +8,30 @@ import { ListadoComponent } from './components/listado/listado.component';
 import { ProductosBoardComponent } from './components/productos-board/productos-board.component';
 import { AltaComponent } from './components/alta/alta.component';
 
+import { BuscadorComponent } from './components/buscador/buscador.component';
+
+import { ActorBoardComponent } from './components/actor-board/actor-board.component';
+import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
+
+
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
- // { path: 'listado', component: ListadoComponent },
+  { path: 'busqueda', component: BuscadorComponent },
   {
-    path: 'productos', component: ProductosBoardComponent,
+    path: 'peliculas', component: ProductosBoardComponent,
     children:
       [{ path: '', component: ListadoComponent },
       { path: 'alta', component: AltaComponent }]
     },
+    {
+      path: 'actor', component: ProductosBoardComponent,
+      children:
+        [{ path: '', component: ActorListadoComponent },
+        { path: 'listado', component: ActorListadoComponent },
+        { path: 'alta', component: ActorAltaComponent }]
+      },
   {
     path: '',
     redirectTo: '/home',

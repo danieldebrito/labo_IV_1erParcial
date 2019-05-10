@@ -31,3 +31,14 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+img{
+  width: 300px; height: 300px;
+  }
+
+  .responsive {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid red;
+  }

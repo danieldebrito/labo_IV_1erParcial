@@ -21,6 +21,10 @@ import { BotonBorrarComponent } from './components/boton-borrar/boton-borrar.com
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { AltaComponent } from './components/alta/alta.component';
 import { ProductosBoardComponent } from './components/productos-board/productos-board.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
+import { ActorBoardComponent } from './components/actor-board/actor-board.component';
+import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { ProductosBoardComponent } from './components/productos-board/productos-
     BotonBorrarComponent,
     BuscadorComponent,
     AltaComponent,
-    ProductosBoardComponent
+    ProductosBoardComponent,
+    DetalleComponent,
+    ActorBoardComponent,
+    ActorAltaComponent,
+    ActorListadoComponent
   ],
   imports: [
     BrowserModule,

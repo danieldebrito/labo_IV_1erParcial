@@ -11,9 +11,9 @@ export class HttpRouteBaseService {
   constructor(public http: HttpClient) {
     // hostinger test hosting
     // this.urlBase = 'http://juntasmeyro.000webhostapp.com/api/index.php';
-    
+
     // localhost
-    this.urlBase = 'http://localhost/api_productos/index.php';
+    this.urlBase = 'http://localhost/api_parcial/index.php';
   }
 
 
